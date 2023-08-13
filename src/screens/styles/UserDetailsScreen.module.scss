@@ -1,0 +1,88 @@
+.userMainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vmax;
+  width: 100%;
+  .userDetailHeading {
+    text-transform: uppercase;
+    background: #c5dfff;
+    border-radius: 0.8vmin;
+    padding: 1.2vmin 1.8vmin;
+    width: 100%;
+    text-align: center;
+  }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8vmax;
+    .avatarContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4vmin;
+      & > img {
+        width: 12vmin;
+        filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+      }
+    }
+    .bioPara {
+      background: #dbdbdb;
+      border: 1px solid #6c6c6c;
+      font-size: 2.4vmin;
+      line-height: 3vmin;
+      padding: 1.2vmin 1.8vmin;
+      width: 40vmin;
+    }
+    .inputLabelContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4vmax;
+      & > label {
+        text-transform: capitalize;
+        font-size: 2.4vmin;
+        line-height: 3vmin;
+      }
+      & > input {
+        background: #dbdbdb;
+        border: 1px solid #6c6c6c;
+        outline: none;
+        font-size: 2.4vmin;
+        line-height: 3vmin;
+        padding: 1.2vmin 1.8vmin;
+      }
+    }
+  }
+}
+@media (max-width: 640px) {
+  .userMainDiv {
+    margin-top: 8vmin;
+    .userDetailHeading {
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+    }
+    .avatarContainer {
+      gap: 2.4vmin !important;
+      & > img {
+        width: 33vmin !important;
+      }
+    }
+    .bioPara {
+      font-size: 1.2rem !important;
+      line-height: 2.4rem !important;
+      width: 70vmin !important;
+    }
+    .inputLabelContainer {
+      & > label {
+        font-size: 1.6rem !important;
+        line-height: 2.8rem !important;
+      }
+      & > input {
+        font-size: 1.2rem !important;
+        line-height: 2.4rem !important;
+      }
+    }
+  }
+}

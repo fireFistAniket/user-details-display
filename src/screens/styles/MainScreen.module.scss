@@ -1,0 +1,82 @@
+.mainScreenDiv {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  margin: 2vmin 2.8vmin;
+  padding: 2vmin 2.8vmin;
+  gap: 3.5vmin;
+  .navToggleBtn {
+    display: none;
+  }
+  .leftSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2vmax;
+    .listHeading {
+      text-transform: uppercase;
+      background: #c5dfff;
+      border-radius: 0.8vmin;
+      padding: 1.2vmin 1.8vmin;
+      text-align: center;
+    }
+    .listContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5vmax;
+      height: 70vh;
+      overflow: hidden;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      & > button {
+        text-transform: capitalize;
+        font-size: 2.5vmin;
+        line-height: 3vmin;
+        padding: 1.2vmin 1.8vmin;
+        background: #ececec;
+        scroll-snap-align: center;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media (max-width: 639px) {
+  .navToggleBtn {
+    display: block !important;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    & > button {
+      background: transparent;
+      border: none;
+      outline: none;
+      & > img {
+        width: 10vmin;
+      }
+    }
+  }
+  .leftSection {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 10%;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
+    backdrop-filter: blur(5px);
+    .listHeading {
+      font-size: 2.2rem;
+      line-height: 3.3rem;
+    }
+    .listContainer {
+      height: 85vh !important;
+      & > button {
+        font-size: 1.6rem !important;
+        line-height: 2.8rem !important;
+      }
+    }
+  }
+}
